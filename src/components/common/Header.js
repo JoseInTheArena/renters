@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import { Link, IndexLink } from 'react-router';
+import React, {PropTypes} from "react";
+import {Link, IndexLink} from "react-router";
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
 };
 
 Header.propTypes = {
-  loading: PropTypes.bool.isRequired
+  //loading: PropTypes.bool.isRequired
 };
 
 export default Header;
