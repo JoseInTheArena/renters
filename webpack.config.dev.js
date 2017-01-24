@@ -3,10 +3,11 @@ import path from 'path';
 
 export default {
   debug: true,
-  devtool: 'inline-source-map',
-  noInfo: false,
+  //devtool: 'inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
+  noInfo: false, //Webpack will display a list of all the files that it is bundling
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
+    //'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
     path.resolve(__dirname, 'src/index')
   ],
@@ -24,7 +25,7 @@ export default {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [
+    loaders: [ //Types of files we want webpack to handle
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
