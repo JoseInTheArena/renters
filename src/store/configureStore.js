@@ -1,5 +1,5 @@
 import {createStore, applyMiddleware} from 'redux';
-import rootReducer from '../reducers/index'
+import rootReducer from '../reducers/index';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
 export default function configureStore(initialState) {
@@ -7,4 +7,4 @@ export default function configureStore(initialState) {
     rootReducer,
     initialState,
     applyMiddleware(reduxImmutableStateInvariant()));
-};
+}
