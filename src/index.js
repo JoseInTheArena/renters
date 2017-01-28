@@ -7,8 +7,11 @@ import routes from './routes';
 import configureStore from './store/configureStore';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from 'react-redux';
+import {loadProperties} from './actions/propertyActions';
 
 const store = configureStore();
+store.dispatch(loadProperties());
+
 
 render(
   <Provider store={store}>
